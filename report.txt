@@ -1,0 +1,34 @@
+% report.txt
+% INSTRUCTIONS
+% Do not touch any line that starts with a percentage character.
+% Only enter your text in the 6 gaps below, plus your report at the end.
+% Do not use the "%" symbol in your writing.
+% ================================================================================
+% Enter your two student IDs below separated by a comma. If you worked alone, just enter one.
+% e.g. ids=2600123, 2604567
+ids=2603025, 2605674
+% ================================================================================
+% Enter your 1000x runtime (in seconds), executable size (in bytes) for each compiler setting below
+% One line for each of the five settings. Separate the numbers by commas.
+% e.g. Normal= 0.709, 71280
+Normal= 0.807, 71056
+Optimise= 0.525, 71048
+Static= 0.742, 779304
+CPU= 0.508, 71048
+Size= 0.536, 67680
+% ================================================================================
+% Type your report below in text format outlining what you have learned from the INF1102 part 1 project. 
+% The MAXIMUM length of the written report is 20 lines of text. There is no minimum length.
+
+
+
+
+
+
+
+
+
+
+
+
+
