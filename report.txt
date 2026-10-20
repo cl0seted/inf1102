@@ -19,16 +19,21 @@ Size= 0.536, 67680
 % ================================================================================
 % Type your report below in text format outlining what you have learned from the INF1102 part 1 project. 
 % The MAXIMUM length of the written report is 20 lines of text. There is no minimum length.
+From the INF1102 Part 1 Project, we learnt quite a number of things about computing that we didn't have experience with before. 
+These things can be boiled down to three points: C Programming, Linux Navigation, and the Raspberry Pi.
 
+Having very little prior experience with coding in C, the Part 1 Project proved to be a challenge. 
+This was our first experience in seeing how data can be processed in between stdin and stdout. 
+Up until this point, we had only known of calling by value and processing data via CLI arguments (argc and argv).
+It was also interesting to see that there were so many different settings to compile code, and all for different reasons; 
+Be it for performance gains, environment constraints or deployment reliability.
 
+In our previous courses, Linux navigation was touched on a fair amount, so it was not as foreign to the both of us. 
+Linux redirection still managed to give us some confusion, espeically when redirecting from stdin AND out to stdout simultaneously. 
+Furthermore, we discovered that developing a C program within Linux was convenient, as we could look up keywords and syntax via the Linux Man Pages, (i.e. `man intN_t`, `man fabsf`).
 
+This was also our first time ever using a Raspberry Pi, so we ended up running into multiple hassles that we had to learn how to fix; 
+Such as how to interface the Pi on a Windows machine (navigating through "Wifi Sharing" options in the Internet Adapter settings was too convoluted!), 
+and getting the Pi to properly connect and network within our WiFi (Somehow, default `ip route` settings did not work and we had to manually add an ip route).
 
-
-
-
-
-
-
-
-
-
+All in all, the INF1102 Part 1 Project can be summed up as just "lots and lots of troubleshooting", and that helped us to learn a lot regarding computing systems. 
