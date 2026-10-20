@@ -11,40 +11,40 @@
 static void edge_detect(uint8_t *im_in, uint8_t *im_out, int width, int height) {
     memset(im_out, 0, width * height * 3);	// initialize the image to pure black
     for (int y = 0; y < height; y++) {		// loop from top to bottom
-	for (int x = 0; x < width-1; x++) {	// loop from left to right 
+        for (int x = 0; x < width-1; x++) {	// loop from left to right 
 
+            // initialize all variables
+            float prevR, prevG, prevB, nextR, nextG, nextB, diffR, diffG, diffB, total_diff, edge;
 
-	    float prevR, prevG, prevB, nextR, nextG, nextB, diffR, diffG, diffB, total_diff, edge;
+            // starting index of each pixel = (y * width + x) * 3
+            int current_index = (y * width + x) * 3;
 
-	    // starting index of each pixel = (y * width + x) * 3
-	    int current_index = (y * width + x) * 3;
+            prevR = (float) im_in[current_index]; 
+            prevG = (float) im_in[current_index+1]; 
+            prevB = (float) im_in[current_index+2]; 
 
-	    prevR = (float) im_in[current_index]; 
-	    prevG = (float) im_in[current_index+1]; 
-	    prevB = (float) im_in[current_index+2]; 
+            nextR = (float) im_in[current_index+3]; 
+            nextG = (float) im_in[current_index+4]; 
+            nextB = (float) im_in[current_index+5]; 
+            
+            // Calculate difference between neighbouring pixels 
+            diffR = fabsf(prevR - nextR);
+            diffG = fabsf(prevG - nextG);
+            diffB = fabsf(prevB - nextB);
 
-	    nextR = (float) im_in[current_index+3]; 
-	    nextG = (float) im_in[current_index+4]; 
-	    nextB = (float) im_in[current_index+5]; 
-	    
-	    // Calculate difference between neighbouring pixels 
-	    diffR = fabsf(prevR - nextR);
-	    diffG = fabsf(prevG - nextG);
-	    diffB = fabsf(prevB - nextB);
+            // Average differences across all channels
+            total_diff = (diffR + diffG + diffB) / 3;
 
-	    // Average differences across all channels
-	    total_diff = (diffR + diffG + diffB) / 3;
+            // If the pixels are very different from each other, is an edge
+            if (total_diff > 50) {
+                edge = 255.0;
+            }
+            else {
+                edge = 0.0;
+            }
 
-	    // If the pixels are very different from each other, is an edge
-	    if (total_diff > 50) {
-		    edge = 255.0;
-	    }
-	    else {
-		    edge = 0.0;
-	    }
-
-	    im_out[current_index+2] = im_out[current_index+1] = im_out[current_index] = (uint8_t) edge;
-	}
+            im_out[current_index+2] = im_out[current_index+1] = im_out[current_index] = (uint8_t) edge;
+        }
     }
 
 }
