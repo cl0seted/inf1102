@@ -1,0 +1,6 @@
+Finalised submission for pair (2603025, 2605674)
+  report size    : 2899 bytes
+  image size     : 196608 bytes
+  mac            : 2c:cf:67:88:46:58
+  submission     : submission.bin
+  token          : 374ce6b33774ec8e (for verification)
